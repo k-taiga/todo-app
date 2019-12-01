@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Folder;
+use App\Http\Requests\CreateFolder;
 
 class FolderController extends Controller
 {
@@ -12,7 +13,8 @@ class FolderController extends Controller
       return view('folders/create');
     }
 
-    public function create(Request $request)
+    // 引数の型を変更
+    public function create(CreateFolder $request)
     {
 
       // Folderモデルのインスタンスを作成
