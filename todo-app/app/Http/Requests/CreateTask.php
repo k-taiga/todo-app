@@ -24,7 +24,7 @@ class CreateTask extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:100,'
+            'title' => 'required|max:100',
             'due_date' => 'required|date|after_or_equal:today',
         ];
     }
@@ -40,8 +40,8 @@ class CreateTask extends FormRequest
     public function messages()
     {
         return [
-            // キーでメッセージが表示されるべきルールを指定
-            // ドット区切りで左側が項目、右側がルール
+             // キーでメッセージが表示されるべきルールを指定する。
+            // ドット区切りで左側が項目、右側がルールを意味する。
             'due_date.after_or_equal' => ':attribute には今日以降の日付を入力してください。',
         ];
     }
