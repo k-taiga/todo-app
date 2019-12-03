@@ -17,3 +17,6 @@ Route::post('/folders/create', 'FolderController@create');
 // タスク編集
 Route::get('/folders/{id}/tasks/{task_id}/edit', 'TaskController@showEditForm')->name('tasks.edit');
 Route::post('/folders/{id}/tasks/{tasks_id}/edit', 'TaskController@edit');
+
+// user認証周り
+Auth::routes();
