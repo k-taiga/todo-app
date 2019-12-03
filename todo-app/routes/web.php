@@ -1,4 +1,8 @@
 <?php
+
+// ホーム画面
+Route::get('/', 'HomeController@index')->name('home');
+
 // タスク一覧
 Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
 
