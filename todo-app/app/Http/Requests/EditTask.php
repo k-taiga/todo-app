@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Task;
-use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class EditTask extends CreateTask
 {
@@ -17,7 +17,7 @@ class EditTask extends CreateTask
     {
         $rule = parent::rules();
 
-        // inメソッドは入力値が許可リストに含まれているかチェックする
+        // Ruleのinメソッドは入力値が許可リストに含まれているかチェックする
         // 許可リストはTask::STATUSから配列としてキーを取得
         $status_rule = Rule::in(array_keys(Task::STATUS));
 
