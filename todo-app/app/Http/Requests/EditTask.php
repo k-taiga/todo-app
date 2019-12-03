@@ -30,7 +30,7 @@ class EditTask extends CreateTask
     public function attributes()
     {
         // 親のCreateTaskのattributesメソッドと合体させる
-        $attributes = parent::atributes();
+        $attributes = parent::attributes();
 
         return $attributes + [
             'status' => '状態',
