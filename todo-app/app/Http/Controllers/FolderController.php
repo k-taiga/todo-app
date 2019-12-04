@@ -24,7 +24,8 @@ class FolderController extends Controller
       $folder->title = $request->title;
 
       // インスタンスをデータベースに保存する
-      $folder->save();
+      // ユーザーに紐付けて保存
+      Auth::user()->folders()->save($folder);
 
       return redirect()->route('tasks.index', [
         'id' => $folder->id,
