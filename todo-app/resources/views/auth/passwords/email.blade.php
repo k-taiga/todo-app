@@ -1,4 +1,4 @@
-@extends
+@extends('layout')
 
 @section('content')
   <div class="container">
@@ -12,12 +12,12 @@
           			{{ session('status') }}
           		</div>
           	@endif
-          	<form action="{{ route('password.email) }}" method="POST">
+          	<form action="{{ route('password.email') }}" method="POST">
           		@csrf
           		<div class="form-group">
           			<label for="email">メールアドレス</label>
 	                <input type="text" class="form-control" id="email" name="email" />
-              </div>
+	            </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-primary">再発行リンクを送る</button>
               </div>
