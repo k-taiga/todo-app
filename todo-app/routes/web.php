@@ -23,8 +23,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/folders/{folder}/tasks/{tasks}/edit', 'TaskController@edit');
   });
 
-
 });
-
 // user認証周り
 Auth::routes();
